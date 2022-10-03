@@ -48,7 +48,7 @@ function Ingredients() {
   useEffect(() => {
    dispatchHttp({type:'SEND'});
     fetch(
-      "https://upload-files-97fdd-default-rtdb.firebaseio.com//ingedrients.json"
+      "put firebase endpoint"
     )
       .then((response) => {
         dispatchHttp({type:'RESPONSE'});
@@ -71,7 +71,7 @@ function Ingredients() {
 
   const addingedrienthandler = (items) => {
     fetch(
-      "https://upload-files-97fdd-default-rtdb.firebaseio.com//ingedrients.json",
+      "put firebase endpoint",
       {
         method: "POST",
         body: JSON.stringify({ items }),
@@ -95,7 +95,7 @@ function Ingredients() {
   const RemoveItemhandler = (ingedrientid) => {
     setisloading(true);
     fetch(
-      `https://upload-files-97fdd-default-rtdb.firebaseio.com//ingedrients/${ingedrientid}.json`,
+      `put firebase endpoint//ingedrients/${ingedrientid}.json`,
       {
         method: "DELETE",
       }
